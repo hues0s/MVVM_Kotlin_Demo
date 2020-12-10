@@ -1,3 +1,9 @@
 <resources>
-    <string name="app_name">API REST Demo Hector</string>
+    <string name="app_name">MVVM Demo</string>
+
+
+    <string name="fragment_start_button_showall">Show all photos</string>
+    <string name="fragment_start_button_showone">Show one photo</string>
+
+
 </resources>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/startFragment">
+
+    <fragment
+        android:id="@+id/startFragment"
+        android:name="com.example.apirestdemohector.StartFragment"
+        android:label="fragment_start"
+        tools:layout="@layout/fragment_start" >
+        <action
+            android:id="@+id/action_startFragment_to_showAllPhotosFragment"
+            app:destination="@id/showAllPhotosFragment" />
+
+        <action
+            android:id="@+id/action_startFragment_to_showOnePhotoFragment"
+            app:destination="@id/showOnePhotoFragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/showAllPhotosFragment"
+        android:name="com.example.apirestdemohector.ShowAllPhotosFragment"
+        android:label="fragment_show_all_photos"
+        tools:layout="@layout/fragment_show_all_photos" />
+
+    <fragment
+        android:id="@+id/showOnePhotoFragment"
+        android:name="com.example.apirestdemohector.ShowOnePhotoFragment"
+        android:label="fragment_show_one_photo"
+        tools:layout="@layout/fragment_show_one_photo" />
+
+</navigation>
