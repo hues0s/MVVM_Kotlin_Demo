@@ -8,7 +8,7 @@
 
     <fragment
         android:id="@+id/startFragment"
-        android:name="com.example.apirestdemohector.StartFragment"
+        android:name="com.example.apirestdemohector.view.fragments.StartFragment"
         android:label="fragment_start"
         tools:layout="@layout/fragment_start" >
         <action
@@ -23,13 +23,13 @@
 
     <fragment
         android:id="@+id/showAllPhotosFragment"
-        android:name="com.example.apirestdemohector.ShowAllPhotosFragment"
+        android:name="com.example.apirestdemohector.view.fragments.ShowAllPhotosFragment"
         android:label="fragment_show_all_photos"
         tools:layout="@layout/fragment_show_all_photos" />
 
     <fragment
         android:id="@+id/showOnePhotoFragment"
-        android:name="com.example.apirestdemohector.ShowOnePhotoFragment"
+        android:name="com.example.apirestdemohector.view.fragments.ShowOnePhotoFragment"
         android:label="fragment_show_one_photo"
         tools:layout="@layout/fragment_show_one_photo" />
 
