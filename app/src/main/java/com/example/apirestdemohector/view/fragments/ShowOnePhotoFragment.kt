@@ -1,60 +1,32 @@
 package com.example.apirestdemohector.view.fragments
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import com.example.apirestdemohector.R
+import com.example.apirestdemohector.viewModel.viewModels.ShowOneViewModel
+import com.squareup.picasso.Picasso
+import kotlinx.android.synthetic.main.show_all_photos_recycler_item.*
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
 
-/**
- * A simple [Fragment] subclass.
- * Use the [ShowOnePhotoFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
-class ShowOnePhotoFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+class ShowOnePhotoFragment : Fragment(R.layout.show_all_photos_recycler_item) {
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
+    private val viewModel by viewModels<ShowOneViewModel>()
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_show_one_photo, container, false)
-    }
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment ShowOnePhotoFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            ShowOnePhotoFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
+        viewModel.photoLiveData(5).observe(viewLifecycleOwner) { photo ->
+            // Check if the result of the search is null or not
+            photo?.let { photo ->
+
+                show_all_photos_recycler_item_title.text = photo.title
+                show_all_photos_recycler_item_id.text = photo.id.toString()
+                show_all_photos_recycler_item_album_id.text = photo.albumId.toString()
+                Picasso.get().load(photo.thumbnailUrl).into(show_all_photos_recycler_item_image)
+
             }
+        }
     }
 }

@@ -5,6 +5,7 @@ import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.apirestdemohector.R
+import com.example.apirestdemohector.view.dialogs.EnterPhotoIDDialog
 import kotlinx.android.synthetic.main.fragment_start.*
 
 
@@ -18,7 +19,7 @@ class StartFragment : Fragment(R.layout.fragment_start) {
         }
 
         fragment_start_button_showone.setOnClickListener {
-            findNavController().navigate(R.id.action_startFragment_to_showOnePhotoFragment)
+            EnterPhotoIDDialog().show(parentFragmentManager, "enter photo id dialog")
         }
 
     }

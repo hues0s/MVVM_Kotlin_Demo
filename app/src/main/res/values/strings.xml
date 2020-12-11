@@ -5,5 +5,12 @@
     <string name="fragment_start_button_showall">Show all photos</string>
     <string name="fragment_start_button_showone">Show one photo</string>
 
+    <string name="show_all_photos_recycler_item_string_id">ID:</string>
+    <string name="show_all_photos_recycler_item_string_album_id">album ID:</string>
+
+    <string name="dialog_enter_photo_id_title">Enter the ID of the desired photo</string>
+    <string name="dialog_enter_photo_id_dismiss">Dismiss</string>
+    <string name="dialog_enter_photo_id_ok">OK</string>
+
 
 </resources>

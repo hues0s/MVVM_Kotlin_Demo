@@ -10,9 +10,6 @@ interface PhotoDAO {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertPhoto(photo: Photo)
 
-    @Delete
-    fun deletePhoto(photo: Photo)
-
     @Query("SELECT * FROM photo_table")
     fun getAllPhotosLiveData(): LiveData<List<Photo>>
 
