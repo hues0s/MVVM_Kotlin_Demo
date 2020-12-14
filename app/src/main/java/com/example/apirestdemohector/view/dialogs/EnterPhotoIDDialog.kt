@@ -10,6 +10,7 @@ import android.widget.Toast
 import androidx.fragment.app.DialogFragment
 import androidx.navigation.fragment.findNavController
 import com.example.apirestdemohector.R
+import com.example.apirestdemohector.utils.MAX_ID
 import com.example.apirestdemohector.view.fragments.StartFragmentDirections
 
 class EnterPhotoIDDialog: DialogFragment() {
@@ -29,11 +30,17 @@ class EnterPhotoIDDialog: DialogFragment() {
 
         okButton.setOnClickListener {
             val photoID = if (editText.text.toString() != "") Integer.valueOf(editText.text.toString()) else 1
-            val action = StartFragmentDirections.actionStartFragmentToShowOnePhotoFragment(photoID)
-            findNavController().navigate(action)
-            if (editText.text.toString() == "")
-                Toast.makeText(context, resources.getString(R.string.dialog_enter_photo_id_default_id_message),
-                        Toast.LENGTH_SHORT).show()
+            if(photoID > MAX_ID) {
+                Toast.makeText(context, resources.getString(R.string.dialog_enter_photo_id_max_id_exceeded),
+                        Toast.LENGTH_LONG).show()
+            }
+            else {
+                val action = StartFragmentDirections.actionStartFragmentToShowOnePhotoFragment(photoID)
+                findNavController().navigate(action)
+                if (editText.text.toString() == "")
+                    Toast.makeText(context, resources.getString(R.string.dialog_enter_photo_id_default_id_message),
+                            Toast.LENGTH_LONG).show()
+            }
             dismiss()
         }
 

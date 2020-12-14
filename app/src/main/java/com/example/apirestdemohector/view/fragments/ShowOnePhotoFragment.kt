@@ -9,7 +9,6 @@ import com.example.apirestdemohector.R
 import com.example.apirestdemohector.view.dialogs.ShowBigPhotoDialog
 import com.example.apirestdemohector.viewModel.viewModels.ShowOneViewModel
 import com.squareup.picasso.Picasso
-import kotlinx.android.synthetic.main.dialog_show_big_photo.*
 import kotlinx.android.synthetic.main.show_all_photos_recycler_item.*
 
 
@@ -37,5 +36,19 @@ class ShowOnePhotoFragment : Fragment(R.layout.show_all_photos_recycler_item) {
 
             }
         }
+
+        viewModel.isPhotoLoadingLiveData.observe(viewLifecycleOwner) {
+            if(it) {
+                show_all_photos_recycler_item_progressBar.visibility = View.VISIBLE
+                show_all_photos_recycler_item_album_id_textview.visibility = View.GONE
+                show_all_photos_recycler_item_id_textview.visibility = View.GONE
+            }
+            else {
+                show_all_photos_recycler_item_progressBar.visibility = View.GONE
+                show_all_photos_recycler_item_album_id_textview.visibility = View.VISIBLE
+                show_all_photos_recycler_item_id_textview.visibility = View.VISIBLE
+            }
+        }
+
     }
 }

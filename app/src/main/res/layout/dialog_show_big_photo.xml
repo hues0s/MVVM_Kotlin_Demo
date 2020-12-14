@@ -7,13 +7,27 @@
     android:minWidth="300dp"
     >
 
-    <ImageView
-        android:id="@+id/dialog_show_big_photo_imageView"
-        android:layout_width="300dp"
-        android:layout_height="300dp"
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_margin="10dp"
-        />
+        >
+
+        <ImageView
+            android:id="@+id/dialog_show_big_photo_imageView"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:layout_margin="10dp"
+            />
+
+        <ProgressBar
+            android:id="@+id/dialog_show_big_photo_progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            />
+
+    </FrameLayout>
 
     <LinearLayout
         android:layout_width="wrap_content"

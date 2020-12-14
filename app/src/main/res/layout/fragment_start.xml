@@ -16,7 +16,7 @@
 
         android:textColor="@color/purple_200"
         android:text="@string/fragment_start_button_showall"
-        android:textSize="20sp"
+        android:textSize="15sp"
 
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -34,7 +34,7 @@
 
         android:textColor="@color/purple_200"
         android:text="@string/fragment_start_button_showone"
-        android:textSize="20sp"
+        android:textSize="15sp"
 
         app:layout_constraintTop_toTopOf="@id/fragment_start_button_showall"
         app:layout_constraintStart_toStartOf="parent"

@@ -11,7 +11,9 @@
     <string name="dialog_enter_photo_id_dismiss">Dismiss</string>
     <string name="dialog_enter_photo_id_ok">OK</string>
     <string name="dialog_enter_photo_id_default_id_message">As you have not entered any ID, the default ID (1) will be loaded.</string>
+    <string name="dialog_enter_photo_id_max_id_exceeded">You have provided an incorrect ID, as it does not exist. Try again.</string>
 
     <string name="dialog_show_big_photo_dismiss">Dismiss</string>
     <string name="dialog_show_big_photo__ok">OK</string>
+
 </resources>

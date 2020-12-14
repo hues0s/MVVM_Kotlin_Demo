@@ -1,5 +1,6 @@
 package com.example.apirestdemohector.view.recyclerAdapters
 
+import android.text.method.ScrollingMovementMethod
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -41,10 +42,9 @@ class PhotoRecyclerAdapter(private val fragmentManager: FragmentManager) :
                 ShowBigPhotoDialog(photo.url).show(fragmentManager, "show big photo")
             }
         }
-
     }
-
 }
+
 
 class TaskDiffCallback : DiffUtil.ItemCallback<Photo>() {
 

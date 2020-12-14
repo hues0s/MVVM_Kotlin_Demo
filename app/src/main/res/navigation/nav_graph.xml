@@ -9,7 +9,7 @@
     <fragment
         android:id="@+id/startFragment"
         android:name="com.example.apirestdemohector.view.fragments.StartFragment"
-        android:label="fragment_start"
+        android:label="Home"
         tools:layout="@layout/fragment_start" >
         <action
             android:id="@+id/action_startFragment_to_showAllPhotosFragment"
@@ -24,13 +24,13 @@
     <fragment
         android:id="@+id/showAllPhotosFragment"
         android:name="com.example.apirestdemohector.view.fragments.ShowAllPhotosFragment"
-        android:label="fragment_show_all_photos"
+        android:label="All photos"
         tools:layout="@layout/fragment_show_all_photos" />
 
     <fragment
         android:id="@+id/showOnePhotoFragment"
         android:name="com.example.apirestdemohector.view.fragments.ShowOnePhotoFragment"
-        android:label="fragment_show_one_photo"
+        android:label="Detailed photo info"
         tools:layout="@layout/show_all_photos_recycler_item" >
         <argument
             android:name="photoID"
