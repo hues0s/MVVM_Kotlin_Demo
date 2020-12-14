@@ -21,7 +21,7 @@ class ShowAllPhotosFragment : Fragment(R.layout.fragment_show_all_photos) {
 
         fragment_show_all_photos_recycler_view.apply {
             this.layoutManager = LinearLayoutManager(this.context)
-            this.adapter = PhotoRecyclerAdapter()
+            this.adapter = PhotoRecyclerAdapter(parentFragmentManager)
         }
 
         viewModel.photoListLiveData.observe(viewLifecycleOwner) { photoList ->

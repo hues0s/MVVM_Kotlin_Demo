@@ -6,9 +6,11 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
+import android.widget.Toast
 import androidx.fragment.app.DialogFragment
 import androidx.navigation.fragment.findNavController
 import com.example.apirestdemohector.R
+import com.example.apirestdemohector.view.fragments.StartFragmentDirections
 
 class EnterPhotoIDDialog: DialogFragment() {
 
@@ -26,13 +28,13 @@ class EnterPhotoIDDialog: DialogFragment() {
         }
 
         okButton.setOnClickListener {
-            editText.text?.let { editText ->
-                //if the user has entered some id, then we will load the photo matching that id
-
-                //aqui tengo que usar safeargs para pasar el edittext.text como argumento
-
-                findNavController().navigate(R.id.action_startFragment_to_showOnePhotoFragment)
-            }
+            val photoID = if (editText.text.toString() != "") Integer.valueOf(editText.text.toString()) else 1
+            val action = StartFragmentDirections.actionStartFragmentToShowOnePhotoFragment(photoID)
+            findNavController().navigate(action)
+            if (editText.text.toString() == "")
+                Toast.makeText(context, resources.getString(R.string.dialog_enter_photo_id_default_id_message),
+                        Toast.LENGTH_SHORT).show()
+            dismiss()
         }
 
         return dialogView

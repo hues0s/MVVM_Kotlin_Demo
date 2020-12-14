@@ -1,7 +1,6 @@
 <resources>
     <string name="app_name">MVVM Demo</string>
 
-
     <string name="fragment_start_button_showall">Show all photos</string>
     <string name="fragment_start_button_showone">Show one photo</string>
 
@@ -11,6 +10,8 @@
     <string name="dialog_enter_photo_id_title">Enter the ID of the desired photo</string>
     <string name="dialog_enter_photo_id_dismiss">Dismiss</string>
     <string name="dialog_enter_photo_id_ok">OK</string>
+    <string name="dialog_enter_photo_id_default_id_message">As you have not entered any ID, the default ID (1) will be loaded.</string>
 
-
+    <string name="dialog_show_big_photo_dismiss">Dismiss</string>
+    <string name="dialog_show_big_photo__ok">OK</string>
 </resources>

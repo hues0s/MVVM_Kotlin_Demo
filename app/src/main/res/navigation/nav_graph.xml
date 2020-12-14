@@ -31,6 +31,11 @@
         android:id="@+id/showOnePhotoFragment"
         android:name="com.example.apirestdemohector.view.fragments.ShowOnePhotoFragment"
         android:label="fragment_show_one_photo"
-        tools:layout="@layout/fragment_show_one_photo" />
+        tools:layout="@layout/show_all_photos_recycler_item" >
+        <argument
+            android:name="photoID"
+            app:argType="integer"
+            android:defaultValue="1" />
+    </fragment>
 
 </navigation>
