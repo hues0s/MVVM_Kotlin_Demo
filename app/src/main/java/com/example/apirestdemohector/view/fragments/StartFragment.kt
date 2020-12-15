@@ -8,7 +8,6 @@ import com.example.apirestdemohector.R
 import com.example.apirestdemohector.view.dialogs.EnterPhotoIDDialog
 import kotlinx.android.synthetic.main.fragment_start.*
 
-
 class StartFragment : Fragment(R.layout.fragment_start) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -21,6 +20,5 @@ class StartFragment : Fragment(R.layout.fragment_start) {
         fragment_start_button_showone.setOnClickListener {
             EnterPhotoIDDialog().show(parentFragmentManager, "enter photo id dialog")
         }
-
     }
 }

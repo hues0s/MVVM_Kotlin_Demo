@@ -19,7 +19,6 @@ class PhotoRepository private constructor(application: Application) {
             INSTANCE = PhotoRepository(application = application)
             INSTANCE!!
         }
-
     }
 
     private val photoDAO: PhotoDAO = RoomDB.getDatabase(application).getPhotoDAO()
@@ -56,5 +55,4 @@ class PhotoRepository private constructor(application: Application) {
             }
         }
     }
-
 }

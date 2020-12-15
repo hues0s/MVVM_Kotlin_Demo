@@ -1,7 +1,10 @@
 package com.example.apirestdemohector.model.database.daos
 
 import androidx.lifecycle.LiveData
-import androidx.room.*
+import androidx.room.Dao
+import androidx.room.Insert
+import androidx.room.OnConflictStrategy
+import androidx.room.Query
 import com.example.apirestdemohector.model.models.Photo
 
 @Dao
@@ -15,5 +18,4 @@ interface PhotoDAO {
 
     @Query("SELECT * FROM photo_table WHERE id = :photoId")
     fun getPhotoByIdLiveData(photoId: Int): LiveData<Photo?>
-
 }

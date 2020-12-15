@@ -14,7 +14,7 @@ class ShowAllViewModel(application: Application) : AndroidViewModel(application)
 
     private val photoRepository = PhotoRepository.getInstance(application)
 
-    //livedata used in order to show progressbar when the api is downloading data
+    // livedata used in order to show progressbar when the api is downloading data
     val arePhotosLoadingLiveData = MutableLiveData<Boolean>()
 
     val photoListLiveData: LiveData<List<Photo>> = liveData(Dispatchers.IO) {

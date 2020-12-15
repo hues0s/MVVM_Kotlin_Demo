@@ -25,5 +25,4 @@ class ShowOneViewModel(application: Application) : AndroidViewModel(application)
             isPhotoLoadingLiveData.value = false
         }
     }
-
 }

@@ -1,13 +1,11 @@
 package com.example.apirestdemohector.view.recyclerAdapters
 
-import android.text.method.ScrollingMovementMethod
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.cardview.widget.CardView
-import androidx.fragment.app.FragmentActivity
 import androidx.fragment.app.FragmentManager
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
@@ -45,7 +43,6 @@ class PhotoRecyclerAdapter(private val fragmentManager: FragmentManager) :
     }
 }
 
-
 class TaskDiffCallback : DiffUtil.ItemCallback<Photo>() {
 
     override fun areItemsTheSame(oldItem: Photo, newItem: Photo): Boolean {
@@ -55,5 +52,4 @@ class TaskDiffCallback : DiffUtil.ItemCallback<Photo>() {
     override fun areContentsTheSame(oldItem: Photo, newItem: Photo): Boolean {
         return oldItem == newItem
     }
-
 }

@@ -10,7 +10,6 @@ import com.example.apirestdemohector.view.recyclerAdapters.PhotoRecyclerAdapter
 import com.example.apirestdemohector.viewModel.viewModels.ShowAllViewModel
 import kotlinx.android.synthetic.main.fragment_show_all_photos.*
 
-
 class ShowAllPhotosFragment : Fragment(R.layout.fragment_show_all_photos) {
 
     private val viewModel by viewModels<ShowAllViewModel>()
@@ -27,13 +26,12 @@ class ShowAllPhotosFragment : Fragment(R.layout.fragment_show_all_photos) {
             (fragment_show_all_photos_recycler_view.adapter as PhotoRecyclerAdapter).submitList(photoList)
         }
 
-        //observes livedata to check when the app is getting info from the api, in order to show the progressBar
+        // observes livedata to check when the app is getting info from the api, in order to show the progressBar
         viewModel.arePhotosLoadingLiveData.observe(viewLifecycleOwner) {
-            if(it)
+            if (it)
                 fragment_show_all_photos_progressBar.visibility = View.VISIBLE
             else
                 fragment_show_all_photos_progressBar.visibility = View.GONE
         }
-
     }
 }

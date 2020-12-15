@@ -11,5 +11,4 @@ interface PhotoEndpoints {
 
     @GET("photos/{photoId}")
     suspend fun getPhotoById(@Path("photoId") photoId: Int): Photo
-
 }

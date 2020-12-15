@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.APIRESTDemoHector">
         <activity
-            android:name=".view.activities.SplashActivity"
+            android:name=".view.activities.SplashScreenActivity"
             android:theme="@style/SplashTheme"
             >
             <intent-filter>
